@@ -1,16 +1,22 @@
 <html>
-</head>
+<head>
 	<title>Tiphaine's blog : student in IP, data and advanced technologies</title>
 </head>
 <body>
 	<div>
 		<h1><a href="/">Tiphaine's blog - The life of a law student in IP and data</a></h1>
+	</div>
 	<div> 
-	{% for post in posts %}
 		<p>published : {{20.10.2019}}</p>
 		<h2><a href="">Django girls event - The Camp, Aix</a></h2>
 		<p>October 19th, I had the chance to participate, for 2 days, at this event.</p>
-		<div>
+	</div>
+	{% for post in posts %}
+	<div>
+		<p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+	</div>
 	{% endfor %}
 	</body>
 </html>
